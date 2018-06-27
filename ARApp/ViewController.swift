@@ -56,8 +56,8 @@ class ViewController: UIViewController {
         guard let hitResult = results.first else { return }
         
         /// access the box
-        guard let boxScene = SCNScene(named: "art.scnassets/box.scn"),
-        let boxNode = boxScene.rootNode.childNode(withName: "box", recursively: true) else { return }
+        guard let boxScene = SCNScene(named: "art.scnassets/solarSystem.scn"),
+        let boxNode = boxScene.rootNode.childNode(withName: "solarSystem", recursively: true) else { return }
         
         /// assign coordinates
         boxNode.position = SCNVector3.init(
@@ -97,7 +97,7 @@ extension ViewController: ARSCNViewDelegate {
         let gridMaterial = SCNMaterial()
         
         /// 4.2 - setting the material as an image. A material can also be set to a color
-        gridMaterial.diffuse.contents = UIImage.init(named: "art.scnassets/z.png")
+        gridMaterial.diffuse.contents = UIImage.init(named: "art.scnassets/grid.png")
         
         /// 4.3 - assigning the material to the plane
         plane.materials = [gridMaterial]
